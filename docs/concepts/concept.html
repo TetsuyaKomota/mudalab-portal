@@ -1,0 +1,1087 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VRマダミスポータルワールド</title>
+  <style>
+    :root {
+      --ink: #10131a;
+      --muted: #5b6472;
+      --paper: #f6f4ef;
+      --panel: #ffffff;
+      --line: #d8d2c6;
+      --red: #a8383b;
+      --green: #2d7460;
+      --blue: #2f5f9e;
+      --gold: #b88a28;
+      --shadow: 0 18px 48px rgba(16, 19, 26, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+      word-break: keep-all;
+      overflow-wrap: normal;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background:
+        linear-gradient(90deg, rgba(168, 56, 59, 0.07), transparent 34%),
+        linear-gradient(180deg, #fbfaf7, var(--paper));
+      color: var(--ink);
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, system-ui, sans-serif;
+      letter-spacing: 0;
+    }
+
+    body {
+      overflow: hidden;
+    }
+
+    .deck {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: none;
+      padding: 2.5vh 3.5vw 6vh;
+      overflow-y: auto;
+      transform: translateX(28px);
+      opacity: 0;
+      transition: opacity 260ms ease, transform 260ms ease;
+    }
+
+    .slide.active {
+      display: grid;
+      align-content: start;
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .frame {
+      width: min(1500px, 100%);
+      min-height: min(900px, 91vh);
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: 8px;
+      padding: clamp(24px, 3vw, 46px);
+      display: grid;
+      gap: 22px;
+      position: relative;
+    }
+
+    .frame::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 10px;
+      background: linear-gradient(180deg, var(--red), var(--gold), var(--green), var(--blue));
+      border-radius: 8px 0 0 8px;
+    }
+
+    .eyebrow {
+      margin: 0;
+      color: var(--red);
+      font-size: clamp(13px, 1.35vw, 16px);
+      font-weight: 700;
+    }
+
+    h1,
+    h2 {
+      margin: 0;
+      line-height: 1.15;
+      font-weight: 800;
+    }
+
+    h1 {
+      font-size: clamp(42px, 5.4vw, 78px);
+    }
+
+    h2 {
+      font-size: clamp(28px, 3.2vw, 46px);
+    }
+
+    h3 {
+      margin: 0 0 12px;
+      font-size: clamp(18px, 1.7vw, 24px);
+    }
+
+    p {
+      margin: 0;
+      line-height: 1.62;
+      font-size: clamp(15px, 1.25vw, 20px);
+    }
+
+    ul,
+    ol {
+      margin: 0;
+      padding-left: 1.25em;
+      display: grid;
+      gap: 10px;
+    }
+
+    li {
+      line-height: 1.46;
+      font-size: clamp(14px, 1.18vw, 19px);
+    }
+
+    .lead {
+      max-width: 940px;
+      color: #2c3038;
+      font-size: clamp(18px, 1.65vw, 26px);
+      line-height: 1.45;
+      font-weight: 700;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .accent {
+      color: var(--red);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid.four {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .grid.auto {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .tile {
+      border: 1px solid var(--line);
+      background: #fffdf9;
+      border-radius: 8px;
+      padding: 20px;
+      min-height: 132px;
+    }
+
+    .tile strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: clamp(17px, 1.6vw, 23px);
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
+      font-weight: 700;
+      color: #303640;
+    }
+
+    .title-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 26px;
+      align-items: center;
+      justify-items: center;
+      min-height: 70vh;
+      text-align: center;
+    }
+
+    .summary-panel {
+      border-left: 4px solid var(--red);
+      padding-left: 20px;
+      display: grid;
+      gap: 14px;
+      max-width: 1040px;
+    }
+
+    .media-split {
+      display: grid;
+      grid-template-columns: minmax(420px, 0.95fr) minmax(360px, 0.75fr);
+      gap: 32px;
+      align-items: stretch;
+    }
+
+    .cover-art,
+    .concept-art {
+      width: 100%;
+      height: 100%;
+      min-height: 470px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: #eee8dc;
+    }
+
+    .concept-art {
+      object-fit: contain;
+      background: #fffdf9;
+    }
+
+    .stats-stack {
+      display: grid;
+      gap: 16px;
+      align-content: start;
+    }
+
+    .stat-card {
+      border: 1px solid var(--line);
+      border-left: 8px solid var(--red);
+      background: #fffdf9;
+      border-radius: 8px;
+      padding: 22px;
+      min-height: 126px;
+    }
+
+    .stat-card:nth-child(2) {
+      border-left-color: var(--blue);
+    }
+
+    .stat-card:nth-child(3) {
+      border-left-color: var(--green);
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: clamp(26px, 3vw, 40px);
+      margin-bottom: 8px;
+    }
+
+    .kpt-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .kpt-main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .mini-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-content: start;
+    }
+
+    .mini-tag {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 10px 12px;
+      font-weight: 800;
+      color: #26303d;
+      font-size: clamp(14px, 1.15vw, 18px);
+    }
+
+    .bridge {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .bridge.compact .tile {
+      min-height: auto;
+      padding: 14px 18px;
+    }
+
+    .bridge.compact h3 {
+      margin-bottom: 8px;
+    }
+
+    .concept-block {
+      display: grid;
+      grid-template-columns: minmax(520px, 1.2fr) minmax(360px, 0.8fr);
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .concept-main {
+      width: 100%;
+      height: 100%;
+      min-height: 430px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: #eee8dc;
+    }
+
+    .concept-cards {
+      display: grid;
+      gap: 12px;
+      align-content: center;
+    }
+
+    .concept-card {
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-left: 7px solid var(--red);
+      background: #fffdf9;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: clamp(15px, 1.18vw, 19px);
+      line-height: 1.45;
+    }
+
+    .concept-card:nth-child(2) { border-left-color: var(--gold); }
+    .concept-card:nth-child(3) { border-left-color: var(--green); }
+    .concept-card:nth-child(4) { border-left-color: var(--blue); }
+    .concept-card:nth-child(5) { border-left-color: var(--red); }
+    .concept-card:nth-child(6) { border-left-color: var(--gold); }
+
+    .cassette-split {
+      display: grid;
+      grid-template-columns: minmax(420px, 0.95fr) minmax(420px, 1fr);
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .cassette-art {
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: #eee8dc;
+    }
+
+    .dense-stack {
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+
+    .code-block {
+      margin: 0;
+      padding: 18px;
+      border-radius: 8px;
+      background: #141820;
+      color: #f4f0e8;
+      font-family: Consolas, "Cascadia Code", monospace;
+      font-size: clamp(12px, 0.95vw, 15px);
+      line-height: 1.42;
+      overflow: auto;
+      white-space: pre;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .process-card {
+      border: 1px solid var(--line);
+      background: #fffdf9;
+      border-radius: 8px;
+      padding: 14px 16px;
+      min-height: 126px;
+    }
+
+    .process-card span {
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--ink);
+      color: #fff;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .process-card p,
+    .process-card li {
+      font-size: clamp(13px, 1.02vw, 16px);
+      line-height: 1.38;
+    }
+
+    .image-process {
+      display: grid;
+      grid-template-columns: minmax(480px, 1fr) minmax(360px, 0.86fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .process-image {
+      width: 100%;
+      height: 100%;
+      min-height: 500px;
+      object-fit: contain;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: #eee8dc;
+    }
+
+    .vertical-process {
+      display: grid;
+      gap: 12px;
+      align-content: center;
+    }
+
+    .flowchart {
+      display: grid;
+      gap: 12px;
+      align-content: center;
+    }
+
+    .flow-node {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-weight: 800;
+      text-align: center;
+      position: relative;
+    }
+
+    .flow-node:not(:last-child)::after {
+      content: "↓";
+      position: absolute;
+      left: 50%;
+      bottom: -24px;
+      transform: translateX(-50%);
+      color: var(--red);
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .mvp-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+    }
+
+    .mvp-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .mvp-item {
+      border: 1px solid var(--line);
+      border-left: 6px solid var(--green);
+      border-radius: 8px;
+      background: #fffdf9;
+      padding: 12px 14px;
+      font-size: clamp(13px, 1.02vw, 16px);
+      line-height: 1.38;
+      font-weight: 700;
+    }
+
+    .mvp-out {
+      border-left-color: var(--red);
+    }
+
+    .bridge-arrow {
+      display: grid;
+      place-items: center;
+      font-size: clamp(42px, 7vw, 84px);
+      color: var(--red);
+      font-weight: 900;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .step {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      background: #fff;
+      min-height: 112px;
+      position: relative;
+    }
+
+    .step span {
+      display: block;
+      color: var(--red);
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .matrix {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .matrix > div {
+      padding: 20px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      min-height: 118px;
+    }
+
+    .matrix > div:nth-child(2n) {
+      border-right: 0;
+    }
+
+    .matrix > div:nth-last-child(-n + 2) {
+      border-bottom: 0;
+    }
+
+    .big-number {
+      font-size: clamp(42px, 6vw, 82px);
+      line-height: 1;
+      font-weight: 900;
+      color: var(--red);
+    }
+
+    .controls {
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      box-shadow: 0 8px 24px rgba(16, 19, 26, 0.12);
+    }
+
+    button {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: var(--ink);
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      background: #b8b2a8;
+      cursor: default;
+    }
+
+    .counter {
+      min-width: 74px;
+      text-align: center;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .progress {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--red), var(--gold), var(--green), var(--blue));
+      z-index: 11;
+      transition: width 180ms ease;
+    }
+
+    @media (max-width: 900px) {
+      body {
+        overflow: auto;
+      }
+
+      .deck {
+        height: auto;
+      }
+
+      .slide,
+      .slide.active {
+        position: static;
+        display: block;
+        min-height: 100vh;
+        padding: 18px 14px 92px;
+      }
+
+      .slide:not(.active) {
+        display: none;
+      }
+
+      .frame {
+        min-height: auto;
+        padding: 28px 22px 34px;
+      }
+
+      .grid,
+      .grid.two,
+      .grid.four,
+      .grid.auto,
+      .split,
+      .flow,
+      .title-layout,
+      .media-split,
+      .kpt-layout,
+      .kpt-main,
+      .bridge,
+      .concept-block,
+      .cassette-split,
+      .process,
+      .image-process,
+      .mvp-grid,
+      .mvp-list {
+        grid-template-columns: 1fr;
+      }
+
+      .matrix {
+        grid-template-columns: 1fr;
+      }
+
+      .matrix > div,
+      .matrix > div:nth-child(2n),
+      .matrix > div:nth-last-child(-n + 2) {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .matrix > div:last-child {
+        border-bottom: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="deck" aria-live="polite">
+    <section class="slide active">
+      <div class="frame">
+        <div class="title-layout">
+          <div>
+            <p class="eyebrow">VRChat Murder Mystery Portal</p>
+            <h1>VRマダミス<br>ポータルワールド</h1>
+            <p class="lead">お手軽も，じっくりも。マダミス作品が集まったVRChatマダミスポータルワールド。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="frame">
+        <p class="eyebrow">Previous Work</p>
+        <h2>前作はGMレスVRマダミスとして成立</h2>
+        <div class="media-split">
+          <img class="cover-art" src="perin_title.jpg" alt="ぼくらのペリン事件 タイトル画像">
+          <div class="stats-stack">
+            <div class="stat-card">
+              <strong>4人専用</strong>
+              <p>固定人数で，個別ハンドアウト，秘密，投票，エンディング分岐を設計。</p>
+            </div>
+            <div class="stat-card">
+              <strong>観戦対応</strong>
+              <p>参加者以外も進行を追える。プレイ後に観客も感想戦へ入りやすい導線を持つ。</p>
+            </div>
+            <div class="stat-card">
+              <strong>約240分</strong>
+              <p>前半120分，後半90分，準備等30分の長時間体験。濃い一方で参加ハードルも高い。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="frame">
+        <p class="eyebrow">KPT</p>
+        <h2>体験の核は有効，制作負荷と参加ハードルが課題</h2>
+        <div class="kpt-layout">
+          <div class="kpt-main">
+            <div class="tile">
+              <h3>Keep: 次回作でも残す体験</h3>
+              <ul>
+                <li>個別ハンドアウトを作り込むことでGMレス進行が成立した。</li>
+                <li>密談，アイテム公開・譲渡，QvPenはVR空間の会話ゲームとして有効だった。</li>
+                <li>ユーザーステート管理，ハンドアウトとアイテムのリスポーン，全員同意のフェーズ移行は安心感を作った。</li>
+                <li>観戦システムと感想戦導線は，参加者以外も体験に関われる余地を作った。</li>
+                <li>真実の情報はアイテム，口頭情報は嘘も可能という整理により，議論と推理の軸が明確になった。</li>
+                <li>エンディング分岐と個人目標により，単なる正解当てではない動機づけが生まれた。</li>
+              </ul>
+            </div>
+            <div class="tile">
+              <h3>Problem: 次回作で解く制約</h3>
+              <ul>
+                <li>4人固定かつ約240分で，遊ぶまでの人数・時間ハードルが高い。</li>
+                <li>複数事件・複数フェーズの整合性確認が重く，脚本制作に時間がかかった。</li>
+                <li>フェーズ，投票，アイテム，エンディングが密結合で，実装を再利用しづらい。</li>
+                <li>VRChat同期・所有権まわりの検証負荷が高く，テストプレイも長時間化した。</li>
+                <li>ハンドアウトを持ち歩く負荷があり，特にデスクトップモードでは情報確認が重かった。</li>
+                <li>ワールド開発，脚本制作，アイテムモデリングの分担境界が曖昧だった。</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tile">
+            <h3>Try: 次回作の設計テーマ</h3>
+            <div class="mini-tags">
+              <span class="mini-tag">カセットシステム</span>
+              <span class="mini-tag">脚本のGit分離</span>
+              <span class="mini-tag">Publicマッチング</span>
+              <span class="mini-tag">2人・3人・4人作品</span>
+              <span class="mini-tag">観戦の独立化</span>
+              <span class="mini-tag">ハンドアウト改善</span>
+              <span class="mini-tag">少人数テスト</span>
+              <span class="mini-tag">静的チェック</span>
+              <span class="mini-tag">制作分担</span>
+              <span class="mini-tag">専用ワールドポータル</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="frame">
+        <p class="eyebrow">From KPT To Next Work</p>
+        <h2>次回作: VRマダミスポータルワールド</h2>
+        <div class="bridge compact">
+          <div class="tile">
+            <h3>前作から分かったこと</h3>
+            <ul>
+              <li>VRChat上のGMレスマダミス体験は成立する。</li>
+              <li>密談，アイテム，観戦，感想戦は次回作でも核になる。</li>
+              <li>一作品ごとに専用実装すると制作・検証が重い。</li>
+            </ul>
+          </div>
+          <div class="tile">
+            <h3>次回作で作りたいもの</h3>
+            <ul>
+              <li>カセットを選び，人数が揃ったテーブルから遊べる場。</li>
+              <li>2人・3人・4人作品を並べ，Publicでも始めやすい場。</li>
+              <li>凝った専用ワールドや他制作者作品にも出会える場。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="concept-block">
+          <img class="concept-main" src="concepts.jpg" alt="VRマダミスポータルワールドのコンセプト画像">
+          <div class="concept-cards">
+            <div class="concept-card">作品カセットを選び，テーブルへ</div>
+            <div class="concept-card">人数が揃ったらマダミス開始</div>
+            <div class="concept-card">テーブル周辺で観戦も可能</div>
+            <div class="concept-card">終了後は感想戦エリアへ</div>
+            <div class="concept-card">ポータルエリアから他作品にも行ける</div>
+            <div class="concept-card">制作エリアでオリジナル作品も作れる</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="frame">
+        <p class="eyebrow">Cassette System</p>
+        <h2>作品をカセット単位で選び，共通基盤に読み込む</h2>
+        <div class="cassette-split">
+          <img class="cassette-art" src="concept_cassette.jpg" alt="ゲームカセットのイメージ">
+          <div class="dense-stack">
+            <div class="tile">
+              <h3>カセットの役割</h3>
+              <p>カセットは，作品データと遊び方のまとまり。テーブルにセットすると，人数，ハンドアウト，アイテム，投票設定を共通基盤へ読み込む。</p>
+            </div>
+            <div class="tile">
+              <h3>集まった人数で遊べる</h3>
+              <ul>
+                <li>2人用，3人用，4人用など，参加人数の異なる作品を同じ棚に並べる。</li>
+                <li>来場者は今いる人数に合うカセットを選び，テーブルで開始できる。</li>
+                <li>複雑な作品は，専用ワールドリンクカセットとしてポータルエリアに配置する。</li>
+              </ul>
+            </div>
+            <div class="tile">
+              <h3>カセットに含む情報</h3>
+              <p>基本設定，プレイヤー設定，アイテム設定，投票設定，開始・終了ハンドアウト。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="frame">
+        <p class="eyebrow">Cassette Data And Git</p>
+        <h2>Gitと同期することで作品カセットを追加できる</h2>
+        <div class="split">
+          <pre class="code-block">{
+  "gameId": "sample-2p-001",
+  "title": "消えた招待状",
+  "summary": "2人用の短編マダミス",
+  "players": {
+    "min": 2,
+    "max": 2,
+    "recommended": 2
+  },
+  "phases": ["handout", "discussion", "vote", "result"],
+  "characters": [
+    {
+      "name": "A",
+      "publicProfile": "招待状を受け取った客",
+      "secretProfile": "昨夜，招待状を隠した"
+    }
+  ],
+  "items": [
+    {
+      "name": "破れた封筒",
+      "owner": "table",
+      "publicText": "封筒の端が破れている"
+    }
+  ],
+  "vote": {
+    "commonQuestion": "招待状を消した人物は？",
+    "choices": ["A", "B"]
+  }
+}</pre>
+          <div class="dense-stack">
+            <div class="tile">
+              <h3>Git管理する理由</h3>
+              <ul>
+                <li>脚本とワールド実装を分離する。</li>
+                <li>差分レビューで作品追加を管理する。</li>
+                <li>PRマージ後にカセット棚へ反映する。</li>
+              </ul>
+            </div>
+            <div class="tile">
+              <h3>JSONで持つ情報</h3>
+              <ul>
+                <li>ゲーム名，概要，人数，フェーズ</li>
+                <li>キャラクター公開情報・秘密情報</li>
+                <li>アイテム情報，初期配置，投票設定</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="frame">
+        <p class="eyebrow">Creation UI</p>
+        <h2>制作エリア: マダミスを作り，カセット化する</h2>
+        <div class="image-process">
+          <img class="process-image" src="concept_edit.jpg" alt="制作エリアのイメージ">
+          <div class="vertical-process">
+            <div class="process-card">
+              <span>1</span>
+              <h3>JSONデータ作成UI</h3>
+              <p>基本設定，プレイヤー設定，アイテム設定，投票設定をワールド内UIで入力する。</p>
+            </div>
+            <div class="process-card">
+              <span>2</span>
+              <h3>カセット生成</h3>
+              <p>入力結果からカセットを生成し，テーブルにセットして遊べる状態にする。</p>
+            </div>
+            <div class="process-card">
+              <span>3</span>
+              <h3>エクスポート</h3>
+              <p>生成したカセットを外部共有用コードとして出力する。</p>
+            </div>
+            <div class="process-card">
+              <span>4</span>
+              <h3>インポート</h3>
+              <p>共有されたコードを入力し，同じカセットをワールド内で再生成する。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="frame">
+        <p class="eyebrow">Adoption Flow</p>
+        <h2>制作したマダミスを正式採用する流れ</h2>
+        <div class="image-process">
+          <div class="flowchart">
+            <div class="flow-node">マダミス製作者<br>ワールド内UIで作品を作成</div>
+            <div class="flow-node">静的チェック<br>整合性を確認</div>
+            <div class="flow-node">PR または SNS で共有</div>
+            <div class="flow-node">ワールド開発者<br>ガイドライン観点で確認</div>
+            <div class="flow-node">マージ後<br>カセット棚へ自動追加</div>
+          </div>
+          <div class="vertical-process">
+            <div class="process-card">
+              <span>1</span>
+              <h3>静的チェック</h3>
+              <p>カセット生成前に人数，項目数，画像参照，投票設定の整合性を確認する。</p>
+            </div>
+            <div class="process-card">
+              <span>2</span>
+              <h3>共有</h3>
+              <p>コードをPRとして送る。SNS等で開発者へ共有する経路も許容する。</p>
+            </div>
+            <div class="process-card">
+              <span>3</span>
+              <h3>レビュー</h3>
+              <p>開発者側でガイドライン観点を確認する。初期は公序良俗などのガードレール中心。</p>
+            </div>
+            <div class="process-card">
+              <span>4</span>
+              <h3>追加</h3>
+              <p>マージ後，自動的にカセット棚へ追加され，テーブルエリアで選べるようになる。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="frame">
+        <p class="eyebrow">MVP</p>
+        <h2>まずは1テーブル・固定人数作品・Git分離で検証</h2>
+        <div class="mvp-grid">
+          <div class="tile">
+            <h3>MVPで作るもの</h3>
+            <div class="mvp-list">
+              <div class="mvp-item">1テーブル</div>
+              <div class="mvp-item">カセット選択</div>
+              <div class="mvp-item">2人用・3人用・4人用カセット各1本</div>
+              <div class="mvp-item">固定フェーズ構成: ハンドアウト確認，議論，投票，発表</div>
+              <div class="mvp-item">作品データのGit分離</div>
+              <div class="mvp-item">ハンドアウトのリスポーン</div>
+              <div class="mvp-item">公開済み情報・アイテム確認</div>
+              <div class="mvp-item">観戦エリア</div>
+              <div class="mvp-item">開発者モード</div>
+              <div class="mvp-item">作品データ静的チェック</div>
+              <div class="mvp-item">ポータルエリア・制作エリアの予定地</div>
+            </div>
+          </div>
+          <div class="tile">
+            <h3>MVPで作らないもの</h3>
+            <div class="mvp-list">
+              <div class="mvp-item mvp-out">専用ギミック追加</div>
+              <div class="mvp-item mvp-out">複雑なフェーズ編集</div>
+              <div class="mvp-item mvp-out">観戦者の高度な音声聞き分け</div>
+              <div class="mvp-item mvp-out">複数テーブル同時稼働</div>
+              <div class="mvp-item mvp-out">人数可変作品の自動役職調整</div>
+              <div class="mvp-item mvp-out">ポータルエリアの実機能</div>
+              <div class="mvp-item mvp-out">制作エリアの実機能</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="frame">
+        <p class="eyebrow">Next Actions</p>
+        <h2>技術検証と小規模作品制作から始める</h2>
+        <div class="split">
+          <div class="tile">
+            <h3>リスク</h3>
+            <ul>
+              <li>カセット差し替えの実現性</li>
+              <li>テーブル単位の状態管理</li>
+              <li>Publicマッチング成立性</li>
+              <li>初期作品数不足</li>
+            </ul>
+          </div>
+          <div class="tile">
+            <h3>次アクション</h3>
+            <ul>
+              <li>カセットデータ形式の試作</li>
+              <li>1テーブル進行プロトタイプ</li>
+              <li>2人用短編の試作</li>
+              <li>静的チェック仕様の作成</li>
+              <li>観戦エリアの技術検証</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="controls" aria-label="スライド操作">
+    <button id="prev" type="button" aria-label="前のスライド">‹</button>
+    <div id="counter" class="counter">1 / 10</div>
+    <button id="next" type="button" aria-label="次のスライド">›</button>
+  </nav>
+  <div id="progress" class="progress"></div>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll(".slide"));
+    const prev = document.getElementById("prev");
+    const next = document.getElementById("next");
+    const counter = document.getElementById("counter");
+    const progress = document.getElementById("progress");
+    let index = 0;
+
+    function showSlide(nextIndex) {
+      index = Math.max(0, Math.min(slides.length - 1, nextIndex));
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+      });
+      prev.disabled = index === 0;
+      next.disabled = index === slides.length - 1;
+      counter.textContent = `${index + 1} / ${slides.length}`;
+      progress.style.width = `${((index + 1) / slides.length) * 100}%`;
+      window.location.hash = `slide-${index + 1}`;
+    }
+
+    prev.addEventListener("click", () => showSlide(index - 1));
+    next.addEventListener("click", () => showSlide(index + 1));
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft" || event.key === "PageUp") {
+        showSlide(index - 1);
+      }
+      if (event.key === "ArrowRight" || event.key === "PageDown" || event.key === " ") {
+        event.preventDefault();
+        showSlide(index + 1);
+      }
+      if (event.key === "Home") {
+        showSlide(0);
+      }
+      if (event.key === "End") {
+        showSlide(slides.length - 1);
+      }
+    });
+
+    const hashMatch = window.location.hash.match(/slide-(\d+)/);
+    if (hashMatch) {
+      showSlide(Number(hashMatch[1]) - 1);
+    } else {
+      showSlide(0);
+    }
+  </script>
+</body>
+</html>
