@@ -1,0 +1,41 @@
+{
+  "gameId": "sample-002",
+  "title": "嘘つきだらけの同窓会",
+  "summary": "3人用の短編マダミス",
+  "players": {
+    "min": 3,
+    "max": 3,
+    "recommended": 3
+  },
+  "phases": ["handout", "discussion", "vote", "result"],
+  "characters": [
+    {
+      "name": "A",
+      "publicProfile": "高校の同窓生",
+      "secretProfile": "元同窓生を殺害した"
+    },
+    {
+      "name": "B",
+      "publicProfile": "高校の同窓生",
+      "secretProfile": "同窓会の企画で被害者とトラブルがあった"
+    },
+    {
+      "name": "C",
+      "publicProfile": "高校の元教師",
+      "secretProfile": "殺害された元生徒と当時交際していた"
+    }
+  ],
+  "items": [
+    {
+      "name": "LINEのやり取り",
+      "owner": "B",
+      "publicText": "被害者と恋愛関係でトラブルがあった"
+    }
+  ],
+  "votes": [
+    {
+      "commonQuestion": "元同窓生を殺害した犯人は？",
+      "choices": ["A", "B", "c"]
+    }
+  ]
+}

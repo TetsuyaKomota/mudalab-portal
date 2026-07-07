@@ -1,0 +1,55 @@
+{
+  "gameId": "sample-003",
+  "title": "ぼくらのペリン事件",
+  "summary": "4人用の短編マダミス",
+  "players": {
+    "min": 4,
+    "max": 4,
+    "recommended": 4
+  },
+  "phases": ["handout", "discussion", "vote", "result"],
+  "characters": [
+    {
+      "name": "アッキー",
+      "publicProfile": "ドラム担当",
+      "secretProfile": "昨日ビノのPCで，ビノの誕生日プレゼントを購入した"
+    },
+    {
+      "name": "ビノ",
+      "publicProfile": "ギターボーカル担当",
+      "secretProfile": "1周年記念の動画を皆に秘密で制作している"
+    },
+    {
+      "name": "チハ",
+      "publicProfile": "キーボード担当",
+      "secretProfile": "アッキーのペリンを勝手に食べた"
+    },
+    {
+      "name": "ダイキ",
+      "publicProfile": "ベース担当",
+      "secretProfile": "ビノの誕生日ケーキを購入した"
+    }
+  ],
+  "items": [
+    {
+      "name": "ペリンのゴミ",
+      "owner": "table",
+      "publicText": "チハの部屋のゴミ箱からペリンのゴミが見つかった"
+    },
+    {
+      "name": "洋菓子店の予約票",
+      "owner": "table",
+      "publicText": "ダイキの部屋から洋菓子店の予約票が見つかった"
+    }
+  ],
+  "votes": [
+    {
+      "commonQuestion": "アッキーのペリンを食べたのは？",
+      "choices": ["アッキー", "ビノ", "チハ", "ダイキ"]
+    },
+    {
+      "commonQuestion": "動画データを消したのは？",
+      "choices": ["アッキー", "ビノ", "チハ", "ダイキ"]
+    }
+  ]
+}
