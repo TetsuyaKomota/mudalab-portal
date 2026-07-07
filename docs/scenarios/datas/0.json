@@ -1,0 +1,36 @@
+{
+  "gameId": "sample-001",
+  "title": "消えた招待状",
+  "summary": "2人用の短編マダミス",
+  "players": {
+    "min": 2,
+    "max": 2,
+    "recommended": 2
+  },
+  "phases": ["handout", "discussion", "vote", "result"],
+  "characters": [
+    {
+      "name": "A",
+      "publicProfile": "招待状を受け取った客",
+      "secretProfile": "昨夜，招待状を隠した"
+    },
+    {
+      "name": "B",
+      "publicProfile": "招待状を受け取れなかった客",
+      "secretProfile": "主催者の命を狙っている"
+    }
+  ],
+  "items": [
+    {
+      "name": "破れた封筒",
+      "owner": "table",
+      "publicText": "封筒の端が破れている"
+    }
+  ],
+  "votes": [
+    {
+      "commonQuestion": "招待状を消した人物は？",
+      "choices": ["A", "B"]
+    }
+  ]
+}
