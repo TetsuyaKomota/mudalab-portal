@@ -1,0 +1,12 @@
+{ 
+  "gameId": "external-sample-002",
+  "title": "SilverBlood MurderMystery",
+  "summary": "This World is ＂Immersive Cloud＂ 's world․ You can play MuderMystery with 3 people‚ no GM needed․",
+  "players": {
+    "min": 3,
+    "max": 3,
+    "recommended": 3
+  },
+    "worldId": "wrld_57139eef-01d1-4716-928f-ef2f0f264b2e",
+    "tags": ["GMなし", "個人目標あり"]
+}
