@@ -1,0 +1,33 @@
+{
+  "gameId": "external-world-fbbc2dbd-d0e8-47ac-a420-af77b1a5e4bf",
+  "title": "『マダミス』豪華客船舞踏会",
+  "summary": "豪華客船の舞踏会を舞台にしたVRChat専用オリジナル作品。GM進行でRPと推理を行う。",
+  "players": {
+    "min": 5,
+    "max": 5,
+    "recommended": 5
+  },
+  "worldId": "wrld_fbbc2dbd-d0e8-47ac-a420-af77b1a5e4bf",
+  "tags": [
+    "4PL",
+    "GM1",
+    "豪華客船",
+    "舞踏会",
+    "RP重視",
+    "VC推奨"
+  ],
+  "external": {
+    "gm": {
+      "required": true
+    },
+    "playTime": {
+      "approximate": null
+    },
+    "language": "日本語",
+    "platforms": "PC（VR推奨）",
+    "author": "eto088",
+    "maxConnections": 10,
+    "checkedAt": "2026-08-08",
+    "notes": "GM用スイッチあり。既プレイ者はGM／観戦参加が可能。"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "gameId": "external-world-858dfdfc-1b48-4e1e-8a43-f0edc611e5fe",
+  "title": "Murder 4",
+  "summary": "探偵・一般人・殺人者に分かれ、手掛かりや武器を使う正体隠匿PvPホラーゲーム。",
+  "players": {
+    "min": 3,
+    "max": 24,
+    "recommended": null
+  },
+  "worldId": "wrld_858dfdfc-1b48-4e1e-8a43-f0edc611e5fe",
+  "tags": [
+    "social deduction",
+    "detective",
+    "murderer",
+    "bystander",
+    "PvP",
+    "horror",
+    "clues",
+    "weapons"
+  ],
+  "external": {
+    "gm": {
+      "required": false
+    },
+    "playTime": {
+      "approximate": null
+    },
+    "language": "多言語／英語中心",
+    "platforms": [
+      "PC",
+      "Android",
+      "iOS"
+    ],
+    "author": "Jar",
+    "maxConnections": 24,
+    "checkedAt": "2026-08-08",
+    "notes": "広義の『Murder Mystery』検索には出るが、日本語圏の物語型マダミスとは別ジャンル。"
+  }
+}

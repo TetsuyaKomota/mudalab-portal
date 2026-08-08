@@ -1,0 +1,32 @@
+{
+  "gameId": "external-world-e98f3636-2ffe-4ddc-ad37-1f14f9dddd1b",
+  "title": "レッサーパンダは誰？-Madamisu_JP",
+  "summary": "サル山を舞台にした5人用・GMレスのマーダーミステリー。各プレイヤーが情報を持ち寄り、事件の真相を探る。",
+  "players": {
+    "min": 5,
+    "max": 5,
+    "recommended": 5
+  },
+  "worldId": "wrld_e98f3636-2ffe-4ddc-ad37-1f14f9dddd1b",
+  "tags": [
+    "5人用",
+    "サル山",
+    "レッサーパンダ",
+    "動物",
+    "GMレス"
+  ],
+  "external": {
+    "gm": {
+      "required": false
+    },
+    "playTime": {
+      "approximate": null
+    },
+    "language": "日本語",
+    "platforms": null,
+    "author": "HaoriHakama678",
+    "maxConnections": null,
+    "checkedAt": "2026-08-08",
+    "notes": "紹介記事で人数・GMレスを確認。最大接続数と対応端末は未確認。"
+  }
+}

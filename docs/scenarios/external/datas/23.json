@@ -1,0 +1,35 @@
+{
+  "gameId": "external-world-e9664561-6dad-47b4-a14c-da21f8b1058f",
+  "title": "Murder Mystery: Colégio Vale Mystery",
+  "summary": "ピザ店近くの学校を舞台にしたポルトガル語圏のDanganronpa風Murder Mysteryマップ。",
+  "players": {
+    "min": null,
+    "max": null,
+    "recommended": null
+  },
+  "worldId": "wrld_e9664561-6dad-47b4-a14c-da21f8b1058f",
+  "tags": [
+    "Portuguese",
+    "Danganronpa",
+    "school",
+    "pizzeria",
+    "roleplay"
+  ],
+  "external": {
+    "gm": {
+      "required": null
+    },
+    "playTime": {
+      "approximate": null
+    },
+    "language": "ポルトガル語",
+    "platforms": [
+      "PC",
+      "Quest"
+    ],
+    "author": "TrengoMaximus",
+    "maxConnections": 30,
+    "checkedAt": "2026-08-08",
+    "notes": "言語とルールを事前確認する必要あり。"
+  }
+}

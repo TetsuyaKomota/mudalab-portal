@@ -1,0 +1,31 @@
+{
+  "gameId": "external-world-b771c9bb-02e0-4697-a0bb-01f4972b6db9",
+  "title": "（旧）VRマーダーミステリー『珊瑚の間事件』",
+  "summary": "『珊瑚の間事件』の旧ワールド。現在は新しいroomIdのワールドがあるため、原則として新ワールドを案内する。",
+  "players": {
+    "min": null,
+    "max": null,
+    "recommended": null
+  },
+  "worldId": "wrld_b771c9bb-02e0-4697-a0bb-01f4972b6db9",
+  "tags": [
+    "旧版",
+    "珊瑚の間",
+    "大丸松坂屋",
+    "リダイレクト候補"
+  ],
+  "external": {
+    "gm": {
+      "required": null
+    },
+    "playTime": {
+      "approximate": null
+    },
+    "language": "日本語",
+    "platforms": null,
+    "author": "DM-Official",
+    "maxConnections": null,
+    "checkedAt": "2026-08-08",
+    "notes": "ポータルでは現行IDへ誘導するのが安全。"
+  }
+}

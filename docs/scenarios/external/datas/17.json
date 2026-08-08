@@ -1,0 +1,35 @@
+{
+  "gameId": "external-world-937d3bbc-827c-472f-8443-692eedd0e37a",
+  "title": "Murder Mystery - Phantom Valley Boarding School for Troubled Youth",
+  "summary": "問題を抱える若者向け寄宿学校を舞台にした、Danganronpa系Murder Mystery／ロールプレイ用マップ。",
+  "players": {
+    "min": null,
+    "max": null,
+    "recommended": null
+  },
+  "worldId": "wrld_937d3bbc-827c-472f-8443-692eedd0e37a",
+  "tags": [
+    "Danganronpa",
+    "boarding school",
+    "roleplay",
+    "youth",
+    "school"
+  ],
+  "external": {
+    "gm": {
+      "required": null
+    },
+    "playTime": {
+      "approximate": null
+    },
+    "language": "英語",
+    "platforms": [
+      "PC",
+      "Quest"
+    ],
+    "author": "Phantomo0",
+    "maxConnections": 32,
+    "checkedAt": "2026-08-08",
+    "notes": "固定シナリオの有無・必要人数は未確認。"
+  }
+}

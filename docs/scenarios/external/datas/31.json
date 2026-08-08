@@ -1,0 +1,31 @@
+{
+  "gameId": "external-world-6f54a0b0-1813-4fc0-8a24-85f9074b5213",
+  "title": "Murder Mystery: DanganPizzeria",
+  "summary": "ピザ店を舞台にしたDanganronpa風のMurder Mysteryロールプレイ用マップ。",
+  "players": {
+    "min": null,
+    "max": null,
+    "recommended": null
+  },
+  "worldId": "wrld_6f54a0b0-1813-4fc0-8a24-85f9074b5213",
+  "tags": [
+    "Danganronpa",
+    "pizzeria",
+    "roleplay",
+    "final update"
+  ],
+  "external": {
+    "gm": {
+      "required": null
+    },
+    "playTime": {
+      "approximate": null
+    },
+    "language": "英語",
+    "platforms": null,
+    "author": "SleepyToYou",
+    "maxConnections": 80,
+    "checkedAt": "2026-08-08",
+    "notes": "旧ワールド扱い。"
+  }
+}

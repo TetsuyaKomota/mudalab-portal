@@ -1,0 +1,34 @@
+{
+  "gameId": "external-world-999ac105-52be-47f1-9534-351e7a03d414",
+  "title": "Murder Mystery: Local Stay V1.66",
+  "summary": "人のいない町を舞台に、Mastermindを含む参加者が展開を作るライブRP型Murder Mysteryマップ。",
+  "players": {
+    "min": null,
+    "max": null,
+    "recommended": null
+  },
+  "worldId": "wrld_999ac105-52be-47f1-9534-351e7a03d414",
+  "tags": [
+    "deserted town",
+    "Mastermind",
+    "live roleplay",
+    "Danganronpa-like"
+  ],
+  "external": {
+    "gm": {
+      "required": null
+    },
+    "playTime": {
+      "approximate": null
+    },
+    "language": "英語",
+    "platforms": [
+      "PC",
+      "Quest"
+    ],
+    "author": "benofmusic",
+    "maxConnections": 30,
+    "checkedAt": "2026-08-08",
+    "notes": "最大接続数はプレイ人数ではない。"
+  }
+}

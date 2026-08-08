@@ -1,0 +1,35 @@
+{
+  "gameId": "external-world-fea3187a-4067-4b6d-b16a-8efd355132ca",
+  "title": "Otherworldly Academy | Murder Mystery",
+  "summary": "異世界の学園を舞台にしたDanganronpa風Murder Mystery／ロールプレイ用マップ。",
+  "players": {
+    "min": null,
+    "max": null,
+    "recommended": null
+  },
+  "worldId": "wrld_fea3187a-4067-4b6d-b16a-8efd355132ca",
+  "tags": [
+    "Danganronpa",
+    "otherworld",
+    "academy",
+    "fantasy",
+    "roleplay"
+  ],
+  "external": {
+    "gm": {
+      "required": null
+    },
+    "playTime": {
+      "approximate": null
+    },
+    "language": "英語",
+    "platforms": [
+      "PC",
+      "Quest"
+    ],
+    "author": "SuperNitori",
+    "maxConnections": 40,
+    "checkedAt": "2026-08-08",
+    "notes": "固定シナリオの有無・必要人数は未確認。"
+  }
+}

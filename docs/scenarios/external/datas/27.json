@@ -1,0 +1,35 @@
+{
+  "gameId": "external-world-76808813-76ca-4151-9269-90d7d5aba1f3",
+  "title": "The Detention Facility",
+  "summary": "拘禁施設を舞台にしたDanganronpa風のライブRP／Murder Mystery会場。主催者による運営を前提とする可能性が高い。",
+  "players": {
+    "min": null,
+    "max": null,
+    "recommended": null
+  },
+  "worldId": "wrld_76808813-76ca-4151-9269-90d7d5aba1f3",
+  "tags": [
+    "detention",
+    "facility",
+    "Danganronpa",
+    "roleplay",
+    "hosted game"
+  ],
+  "external": {
+    "gm": {
+      "required": null
+    },
+    "playTime": {
+      "approximate": null
+    },
+    "language": "英語",
+    "platforms": [
+      "PC",
+      "Quest"
+    ],
+    "author": "LittleJedi",
+    "maxConnections": 48,
+    "checkedAt": "2026-08-08",
+    "notes": "固定シナリオの有無・必要人数は未確認。"
+  }
+}

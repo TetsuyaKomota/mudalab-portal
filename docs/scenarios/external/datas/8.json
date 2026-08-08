@@ -1,0 +1,33 @@
+{
+  "gameId": "external-world-2ae51a51-06e2-44b0-982a-3b613ad7f2d4",
+  "title": "『マダミス』夜の教会",
+  "summary": "VRChatでのプレイを前提に作られたオリジナル作品。教会を舞台に、GMが進行を調整しながらRPと推理を行う。",
+  "players": {
+    "min": 5,
+    "max": 5,
+    "recommended": 5
+  },
+  "worldId": "wrld_2ae51a51-06e2-44b0-982a-3b613ad7f2d4",
+  "tags": [
+    "4PL",
+    "GM1",
+    "教会",
+    "RP重視",
+    "VC推奨",
+    "VRChat専用"
+  ],
+  "external": {
+    "gm": {
+      "required": true
+    },
+    "playTime": {
+      "approximate": null
+    },
+    "language": "日本語",
+    "platforms": "PC（VR推奨）",
+    "author": "eto088",
+    "maxConnections": 10,
+    "checkedAt": "2026-08-08",
+    "notes": "GM用スイッチあり。既プレイ者はGM／観戦参加が可能。"
+  }
+}

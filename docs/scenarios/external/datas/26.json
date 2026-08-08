@@ -1,0 +1,30 @@
+{
+  "gameId": "external-world-3e8ff417-b984-4bcf-965c-8af0e72fb46a",
+  "title": "Murder Mystery Game",
+  "summary": "Danganronpaタグが付くMurder Mystery用マップ。公開状態・ルール・人数の詳細確認が必要。",
+  "players": {
+    "min": null,
+    "max": null,
+    "recommended": null
+  },
+  "worldId": "wrld_3e8ff417-b984-4bcf-965c-8af0e72fb46a",
+  "tags": [
+    "Danganronpa",
+    "Murder Mystery",
+    "Labs"
+  ],
+  "external": {
+    "gm": {
+      "required": null
+    },
+    "playTime": {
+      "approximate": null
+    },
+    "language": "英語",
+    "platforms": null,
+    "author": "RAToTAT",
+    "maxConnections": 16,
+    "checkedAt": "2026-08-08",
+    "notes": "ポータル掲載前にVRChat上で現存・公開状態を再確認。"
+  }
+}
