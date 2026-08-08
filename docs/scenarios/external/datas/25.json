@@ -1,0 +1,34 @@
+{
+  "gameId": "external-world-e10e2edf-116f-40dc-b293-d2b690b52c8c",
+  "title": "Angiemeisters School for Edgy Misfits",
+  "summary": "Danganronpa風の学校を舞台にしたMurder Mystery／ロールプレイ用マップ。",
+  "players": {
+    "min": null,
+    "max": null,
+    "recommended": null
+  },
+  "worldId": "wrld_e10e2edf-116f-40dc-b293-d2b690b52c8c",
+  "tags": [
+    "Danganronpa",
+    "school",
+    "edgy",
+    "roleplay"
+  ],
+  "external": {
+    "gm": {
+      "required": null
+    },
+    "playTime": {
+      "approximate": null
+    },
+    "language": "英語",
+    "platforms": [
+      "PC",
+      "Quest"
+    ],
+    "author": "- S A T A N -",
+    "maxConnections": 26,
+    "checkedAt": "2026-08-08",
+    "notes": "固定シナリオの有無・必要人数は未確認。"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "gameId": "external-world-f003c7e2-15f0-4a64-92a2-346c6e441c6d",
+  "title": "Murder Mystery Precinct",
+  "summary": "Danganronpa風Murder Mysteryゲームを主催するための警察署／管区マップ。",
+  "players": {
+    "min": null,
+    "max": null,
+    "recommended": null
+  },
+  "worldId": "wrld_f003c7e2-15f0-4a64-92a2-346c6e441c6d",
+  "tags": [
+    "precinct",
+    "police",
+    "Danganronpa",
+    "hosted game",
+    "roleplay"
+  ],
+  "external": {
+    "gm": {
+      "required": null
+    },
+    "playTime": {
+      "approximate": null
+    },
+    "language": "英語",
+    "platforms": null,
+    "author": "Team Mike",
+    "maxConnections": null,
+    "checkedAt": "2026-08-08",
+    "notes": "最大接続数・対応端末を未確認。"
+  }
+}

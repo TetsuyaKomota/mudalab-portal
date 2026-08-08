@@ -1,0 +1,31 @@
+{
+  "gameId": "external-world-88f7e0db-1430-4ad9-8c99-95287726d153",
+  "title": "Boorahemion Rapsody: KH trial Room",
+  "summary": "クラス裁判を想定したDanganronpa風のtrial room。Murder Mysteryイベントの裁判パート向け会場。",
+  "players": {
+    "min": null,
+    "max": null,
+    "recommended": null
+  },
+  "worldId": "wrld_88f7e0db-1430-4ad9-8c99-95287726d153",
+  "tags": [
+    "trial room",
+    "Danganronpa",
+    "class trial",
+    "roleplay"
+  ],
+  "external": {
+    "gm": {
+      "required": null
+    },
+    "playTime": {
+      "approximate": null
+    },
+    "language": "英語",
+    "platforms": null,
+    "author": "SallyNeko",
+    "maxConnections": 40,
+    "checkedAt": "2026-08-08",
+    "notes": "単体シナリオではなく裁判会場の可能性が高い。"
+  }
+}

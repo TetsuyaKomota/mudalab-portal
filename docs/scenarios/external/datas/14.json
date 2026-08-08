@@ -1,0 +1,34 @@
+{
+  "gameId": "external-world-e45ca27d-0e64-4d6a-8664-41213dc9c7e5",
+  "title": "CatsUdon TRPG Home（『金色のプラタナスVR版』ホスト）",
+  "summary": "アナログゲーム用の汎用ローダー／プレイ会場。別売データ『金色のプラタナスVR版』を読み込むことで、4人用・GMレスのマーダーミステリーを遊べる。",
+  "players": {
+    "min": 4,
+    "max": 4,
+    "recommended": 4
+  },
+  "worldId": "wrld_e45ca27d-0e64-4d6a-8664-41213dc9c7e5",
+  "tags": [
+    "汎用ホスト",
+    "外部データ",
+    "有料",
+    "4人用",
+    "GMレス",
+    "金色のプラタナス",
+    "TRPG"
+  ],
+  "external": {
+    "gm": {
+      "required": false
+    },
+    "playTime": {
+      "approximate": true
+    },
+    "language": "日本語",
+    "platforms": null,
+    "author": "CatsUdon",
+    "maxConnections": null,
+    "checkedAt": "2026-08-08",
+    "notes": "ワールド単体ではシナリオを開始できず、購入した外部データの読み込みが必要。"
+  }
+}

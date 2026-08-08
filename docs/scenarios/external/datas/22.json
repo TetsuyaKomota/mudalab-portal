@@ -1,0 +1,35 @@
+{
+  "gameId": "external-world-d8448ccd-62ba-4547-bc99-cfef5082d1ee",
+  "title": "Danganronpa V3: Killing Harmony | Ultimate Academy for Gifted Juveniles",
+  "summary": "Danganronpa V3の学園をMurder Mysteryゲーム向けに再現した大規模ロールプレイ用マップ。",
+  "players": {
+    "min": null,
+    "max": null,
+    "recommended": null
+  },
+  "worldId": "wrld_d8448ccd-62ba-4547-bc99-cfef5082d1ee",
+  "tags": [
+    "Danganronpa V3",
+    "academy",
+    "killing game",
+    "roleplay",
+    "recreation"
+  ],
+  "external": {
+    "gm": {
+      "required": null
+    },
+    "playTime": {
+      "approximate": null
+    },
+    "language": "英語",
+    "platforms": [
+      "PC",
+      "Quest"
+    ],
+    "author": "deblob123456789",
+    "maxConnections": 80,
+    "checkedAt": "2026-08-08",
+    "notes": "固定シナリオよりイベント／RP会場の性格が強い。"
+  }
+}

@@ -1,12 +1,36 @@
-{ 
+{
   "gameId": "external-sample-001",
   "title": "VRマダミス ぼくらのペリン事件",
-  "summary": "4人プレイ専用VRマダミス風ゲームワールドです． シェアハウスで生活していた4人の男は，一夜にして全員が被害者となり，全員が被疑者となった．昨日の夜に起こった事とは？",
+  "summary": "男性4人が暮らすシェアハウスで、一夜の出来事をめぐって全員が被害者かつ容疑者になる4人用VRマダミス風ゲーム。",
   "players": {
     "min": 4,
     "max": 4,
     "recommended": 4
   },
-    "worldId": "wrld_ced67f49-ac16-453b-a013-51ca68872529",
-    "tags": ["GMなし", "探索", "個人目標あり", "死亡表現無し"]
+  "worldId": "wrld_ced67f49-ac16-453b-a013-51ca68872529",
+  "tags": [
+    "GMなし",
+    "探索",
+    "個人目標あり",
+    "死亡表現無し",
+    "4人用",
+    "シェアハウス",
+    "男性4人",
+    "全員が被害者",
+    "全員が容疑者"
+  ],
+  "external": {
+    "gm": {
+      "required": null
+    },
+    "playTime": {
+      "approximate": null
+    },
+    "language": "日本語",
+    "platforms": null,
+    "author": "コモタ_",
+    "maxConnections": 16,
+    "checkedAt": "2026-08-08",
+    "notes": "公式説明では『4人専用』。GM要否・所要時間は未確認。"
+  }
 }

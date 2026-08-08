@@ -1,0 +1,36 @@
+{
+  "gameId": "external-world-fb4bd00e-62c7-4bce-9465-62b6c8267077",
+  "title": "Hope's Peak Academy 2.0 | Murder Mystery",
+  "summary": "希望ヶ峰学園を模したDanganronpa風のMurder Mysteryマップ。主催者がMonokuma役としてゲームを運営できる機能を備える。",
+  "players": {
+    "min": null,
+    "max": null,
+    "recommended": null
+  },
+  "worldId": "wrld_fb4bd00e-62c7-4bce-9465-62b6c8267077",
+  "tags": [
+    "Danganronpa",
+    "Hope's Peak",
+    "Monokuma",
+    "school",
+    "roleplay",
+    "host tools"
+  ],
+  "external": {
+    "gm": {
+      "required": null
+    },
+    "playTime": {
+      "approximate": null
+    },
+    "language": "英語",
+    "platforms": [
+      "PC",
+      "Quest"
+    ],
+    "author": "Hirolotl",
+    "maxConnections": 32,
+    "checkedAt": "2026-08-08",
+    "notes": "ライブRP型。固定シナリオ作品として扱う場合は事前確認が必要。"
+  }
+}
