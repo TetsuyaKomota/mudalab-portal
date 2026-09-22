@@ -1,3 +1,53 @@
 {
-  "activeIds": [0, 1, 2]
+  "schemaVersion": 1,
+  "cassettes": [
+    {
+      "internalId": 0,
+      "gameId": "internal-sample-001",
+      "title": "消えた招待状",
+      "summary": "2人用の短編マダミス",
+      "players": {
+        "min": 2,
+        "max": 2,
+        "recommended": 2
+      },
+      "tags": ["2人用", "短編", "招待状", "ミステリー", "初心者向け"],
+      "playTimeMinutes": 30,
+      "genres": ["ミステリー"],
+      "difficulty": "★2",
+      "dataUrl": "https://tetsuyakomota.github.io/mudalab-portal/scenarios/internal/datas/0.json"
+    },
+    {
+      "internalId": 1,
+      "gameId": "internal-sample-002",
+      "title": "嘘つきだらけの同窓会",
+      "summary": "3人用の短編マダミス",
+      "players": {
+        "min": 3,
+        "max": 3,
+        "recommended": 3
+      },
+      "tags": ["3人用", "短編", "同窓会", "殺人事件", "ミステリー"],
+      "playTimeMinutes": 60,
+      "genres": ["ミステリー", "サスペンス"],
+      "difficulty": "★3",
+      "dataUrl": "https://tetsuyakomota.github.io/mudalab-portal/scenarios/internal/datas/1.json"
+    },
+    {
+      "internalId": 2,
+      "gameId": "internal-sample-003",
+      "title": "ぼくらのペリン事件",
+      "summary": "4人用の短編マダミス",
+      "players": {
+        "min": 4,
+        "max": 4,
+        "recommended": 4
+      },
+      "tags": ["4人用", "短編", "バンド", "日常", "コメディ"],
+      "playTimeMinutes": 60,
+      "genres": ["日常", "コメディ", "ミステリー"],
+      "difficulty": "★2",
+      "dataUrl": "https://tetsuyakomota.github.io/mudalab-portal/scenarios/internal/datas/2.json"
+    }
+  ]
 }
